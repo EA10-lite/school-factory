@@ -1,0 +1,131 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "courses",
+				"outputs": [
+					{
+						"internalType": "contract Courses",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registerSchool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "schools",
+				"outputs": [
+					{
+						"internalType": "contract Courses",
+						"name": "courses",
+						"type": "address"
+					},
+					{
+						"internalType": "contract StudentRecords",
+						"name": "students",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "studentRecords",
+				"outputs": [
+					{
+						"internalType": "contract StudentRecords",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"SchoolFactory.sol": "SchoolFactory"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Courses.sol": {
+			"keccak256": "0x531aee92424a964f3ecac5a5f0f28880fd8693ac9dbd2cb896933f4ef6b8aed7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d4e03e216770607a8a5b4ceb742cf6c17df51d2a09b17b820ea6338e1e0715e0",
+				"dweb:/ipfs/QmNYozmTfD2ANvjuf9sFwC7bHg6XUaPApaJec6SDgpciBN"
+			]
+		},
+		"SchoolFactory.sol": {
+			"keccak256": "0xeac0fbe743d7519ba062d450b9f36a76a9e3d743376dfc643d7d20f9617943ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f32c7b85e66947563d58cd3e02600485c34ce2af5f90fa5340b52a53e4f6fb1f",
+				"dweb:/ipfs/QmS3KZpSDRCks3ZiccAGodCcqmT1JPz3YD8gGmTwrd3LY2"
+			]
+		},
+		"StudentRecords.sol": {
+			"keccak256": "0xa2f6ba0b3c016cc23424121d3e6a62e5ba6bedeabd21bae786513e0ff8190afa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1db24642266389128b104a28e16af51f387021b012b38f9a5831131a9bba064a",
+				"dweb:/ipfs/QmPVCgSFzwCAg3c4NqWwmP5a8EuyQUDynwxzDFL2zdJ5rk"
+			]
+		}
+	},
+	"version": 1
+}
