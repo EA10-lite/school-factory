@@ -20,6 +20,7 @@ contract SchoolFactory {
 
     School[] public schools;
     mapping(string => bool) private nameTaken;
+    mapping(string => bool) private lecturerExist;
 
     function registerSchool(
         string memory _name,
@@ -48,9 +49,8 @@ contract SchoolFactory {
         schools.push(newSchool);
     }
 
-    function getMySchool() public view returns(School[] memory)  {
+    function getMySchools() public view returns(School[] memory)  {
         address owner = msg.sender;
-
         // Count how many schools owned by msg.sender
         uint256 count = 0;
         for(uint256 i = 0; i < schools.length; i++) {
@@ -58,7 +58,6 @@ contract SchoolFactory {
                 count++;
             }
         }
-
 
         // Create a fixed array based on the count
         School[] memory mySchools = new School[](count);
@@ -71,5 +70,28 @@ contract SchoolFactory {
         }
 
         return mySchools;
+    }
+
+    function addLecturerToSchool() public {
+
+    }
+
+
+    function addCourseToSchoo(
+        uint256 _schoolIndex,
+        string memory _courseTitle,
+        string memory _courseCode,
+        uint256 _courseUnit,
+        string memory _lecturerName
+    ) public {
+        School storage school = schools[_schoolIndex];
+        require(msg.sender == school.owner, "Only owner can add courses");
+
+        school.courses.createCourse(
+            _courseTitle,
+            _courseCode,
+            _courseUnit,
+            _lecturerName
+        );
     }
 }

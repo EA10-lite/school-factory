@@ -6,8 +6,48 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_schoolIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_courseTitle",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_courseCode",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_courseUnit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_lecturerName",
+						"type": "string"
+					}
+				],
+				"name": "addCourseToSchoo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "getMySchool",
+				"name": "addLecturerToSchool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMySchools",
 				"outputs": [
 					{
 						"components": [
@@ -187,11 +227,11 @@
 			]
 		},
 		"SchoolFactory.sol": {
-			"keccak256": "0xe290cf2e3c3f8b475eaec2b93768eefb21bf8cffcdbd65196f3f967f477d13fc",
+			"keccak256": "0x2676951d0547d9aff00f0769e6911cc29252369af77485d3e1be2ad4f71fa594",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://df87f9212a7928f0c50b5cbe233823aa807f296024db4d6c9289a87bad5f1934",
-				"dweb:/ipfs/QmUXeDZk13Y9mr14prbVvk37ftvY2LHn2L6zYYc4DH1tWe"
+				"bzz-raw://6054cb86a4e6ecc594e73668864579c39e0aaeaf0fd4b8292b6e89bb80623c17",
+				"dweb:/ipfs/QmYtX3xGf53FkMEsjcZn1kau8UQVHUd4QmoaxqXKoR4DNi"
 			]
 		},
 		"StudentRecords.sol": {
