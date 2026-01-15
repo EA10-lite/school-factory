@@ -7,23 +7,69 @@ import {StudentRecords} from "./StudentRecords.sol";
 import {Lecturers} from "./Lecturers.sol";
 
 contract SchoolFactory {
-    Courses[] public courses;
-    StudentRecords[] public studentRecords;
-    Lecturers[] public lecturers;
-
-    struct Schools {
+    struct School {
+        string name;
+        string country;
+        string city;
+        string schoolAddress;
+        address owner;
         Courses courses;
         StudentRecords students;
         Lecturers lecturers;
     }
 
-    Schools[] public schools;
+    School[] public schools;
+    mapping(string => bool) private nameTaken;
 
-    function registerSchool() public {
+    function registerSchool(
+        string memory _name,
+        string memory _country,
+        string memory _city,
+        string memory _schoolAddress
+    ) public {
+        require(!nameTaken[_name], "School name already exists");
+        nameTaken[_name] = true;
+
         Courses newCourses = new Courses();
         StudentRecords newStudentRecords = new StudentRecords();
         Lecturers newLecturer = new Lecturers();
 
-        schools.push(Schools(newCourses, newStudentRecords, newLecturer));
+        School memory newSchool = School(
+            _name,
+            _country,
+            _city,
+            _schoolAddress,
+            msg.sender,
+            newCourses,
+            newStudentRecords,
+            newLecturer
+        );
+
+        schools.push(newSchool);
+    }
+
+    function getMySchool() public view returns(School[] memory)  {
+        address owner = msg.sender;
+
+        // Count how many schools owned by msg.sender
+        uint256 count = 0;
+        for(uint256 i = 0; i < schools.length; i++) {
+            if (schools[i].owner == owner) {
+                count++;
+            }
+        }
+
+
+        // Create a fixed array based on the count
+        School[] memory mySchools = new School[](count);
+        uint256 index = 0;
+        for (uint256 i = 0; i < schools.length; i++) {
+            if (schools[i].owner == owner) {
+                mySchools[index] = schools[i];
+                index++;
+            }
+        }
+
+        return mySchools;
     }
 }

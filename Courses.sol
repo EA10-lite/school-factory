@@ -2,6 +2,8 @@
 
 pragma solidity ^0.8.19;
 
+import {Lecturers} from "./Lecturers.sol";
+
 contract Courses {
     struct Course {
         string title;
@@ -21,6 +23,7 @@ contract Courses {
         uint256 _unit,
         string memory _lecturer
     ) public  {
+        // courses can't be created without lecturer
         Course memory newCourse = Course({
             title: _title,
             unit: _unit,
