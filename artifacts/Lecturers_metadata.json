@@ -101,11 +101,11 @@
 	},
 	"sources": {
 		"Lecturers.sol": {
-			"keccak256": "0xca1a4f7c1c7a4ebefea9c22e0c4d0ee3e7a0026ed4e82b0a1d70b5aa92e27732",
+			"keccak256": "0x3eefb6053275938f94d97d55d018a8e493d7df3510fc705941c55cd3d3084959",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://303865d96e7c014e33f736ef7d44aa035442eeeb1078c56c12f9171e71a68a5a",
-				"dweb:/ipfs/QmfDBRBppWfi2rjLA7PfvG61haYHBSa1ETxRnP8mVruinB"
+				"bzz-raw://2bc1a88fda55ed64edb6fb0fc91e51a68f9fe40602ee99819a8004753687c081",
+				"dweb:/ipfs/QmbbGwdZodSVyyH7hBm7amUJipWwezLWmgLgGncns9oDEt"
 			]
 		}
 	},
