@@ -14,7 +14,8 @@ contract Courses {
 
     Course[] public courses;
 
-    mapping(string => Course) public codeToCourse;
+    mapping(string => Course) private  codeToCourse;
+    mapping(string => bool) private courseExist;
 
 
     function createCourse (
@@ -23,6 +24,8 @@ contract Courses {
         uint256 _unit,
         string memory _lecturer
     ) public  {
+        require(!courseExist[_title], "Course already added!");
+        courseExist[_title] = true;
         // courses can't be created without lecturer
         Course memory newCourse = Course({
             title: _title,

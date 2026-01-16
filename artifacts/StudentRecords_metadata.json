@@ -6,14 +6,8 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_index",
-						"type": "uint256"
-					}
-				],
-				"name": "getStudentByIndex",
+				"inputs": [],
+				"name": "getStudents",
 				"outputs": [
 					{
 						"components": [
@@ -38,43 +32,9 @@
 								"type": "string"
 							}
 						],
-						"internalType": "struct StudentRecords.Student",
+						"internalType": "struct StudentRecords.Student[]",
 						"name": "",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"name": "nameToRecord",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "age",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "gender",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "department",
-						"type": "string"
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -171,11 +131,11 @@
 	},
 	"sources": {
 		"StudentRecords.sol": {
-			"keccak256": "0x1f15fb9ffab3282bc30172ad3cb0968ced790372eb62860719f56513829c0074",
+			"keccak256": "0x73c44686524e4aabc5344359dc4024f3e775fe7675825162626b90783bcb7377",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8983d8c994c5b0dac931879393534362ac4b2bd27f9a8220c0542caaddbe7d59",
-				"dweb:/ipfs/QmbtsK5nVAt7kBpArg6LAZWwnNkiG1fMRU5ymYXG84n8J5"
+				"bzz-raw://ca7684531aabbcff15b44faf18884b7b3a6714529d57cf720288b98b9c67f126",
+				"dweb:/ipfs/QmZgtSpDacD7CafyjT7BB1LUbHTN2aPrGru41daRRwZx9s"
 			]
 		}
 	},
