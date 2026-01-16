@@ -11,6 +11,7 @@ contract Lecturers {
     mapping(string => bool) private lecturerExist;
 
     function addLecturer(string memory _name, uint256 _age) public {
+        require(bytes(_name).length > 0, "Name cannot be empty");
         require(!lecturerExist[_name], "Lecturer already exist!");
         lecturerExist[_name] = true;
         lecturers.push(Lecturer(_name, _age));

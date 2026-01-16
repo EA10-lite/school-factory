@@ -14,7 +14,7 @@ contract Courses {
 
     Course[] public courses;
 
-    mapping(string => Course) private  codeToCourse;
+    mapping(string => Course) private codeToCourse;
     mapping(string => bool) private courseExist;
 
 
@@ -24,6 +24,7 @@ contract Courses {
         uint256 _unit,
         string memory _lecturer
     ) public  {
+        require(bytes(_title).length > 0, "Name cannot be empty");
         require(!courseExist[_title], "Course already added!");
         courseExist[_title] = true;
         // courses can't be created without lecturer

@@ -131,11 +131,11 @@
 	},
 	"sources": {
 		"Courses.sol": {
-			"keccak256": "0x0e2f34e675ba1bf5899701310bc5a5692238cb3611b9a2f8b93ae1a4f0207b0e",
+			"keccak256": "0x89ba390dad144c254b84ce6b4d93c670c6beae4cbeb638cbc1ef8d8f30776029",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://622934562e12474742398b23579be9a62075ab78909d443fdca0f05593722a2a",
-				"dweb:/ipfs/QmVU5TX6Kik6Lt3GG49f2xKXxvLnnDZaxNu29gXv6nWRM3"
+				"bzz-raw://9fd8c3c8edba48414855aba54b35aa274900ade182bd25e37c7be9d656983860",
+				"dweb:/ipfs/QmW3eadFXaAuKACVg3n5s1V2M4yAosxmg8AYhaT66TZBmK"
 			]
 		},
 		"Lecturers.sol": {
