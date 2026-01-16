@@ -8,6 +8,7 @@ import {Lecturers} from "./Lecturers.sol";
 
 contract SchoolFactory {
     struct School {
+        uint256 id;
         string name;
         string country;
         string city;
@@ -21,6 +22,7 @@ contract SchoolFactory {
     School[] public schools;
     mapping(string => bool) private nameTaken;
     mapping(string => bool) private lecturerExist;
+    mapping(uint256 => School) private schoolId;
 
     function registerSchool(
         string memory _name,
@@ -35,7 +37,10 @@ contract SchoolFactory {
         StudentRecords newStudentRecords = new StudentRecords();
         Lecturers newLecturer = new Lecturers();
 
+        uint256 _schoolId = schools.length + 1;
+
         School memory newSchool = School(
+            _schoolId,
             _name,
             _country,
             _city,
@@ -47,6 +52,7 @@ contract SchoolFactory {
         );
 
         schools.push(newSchool);
+        schoolId[_schoolId] = newSchool;
     }
 
     function getMySchools() public view returns(School[] memory)  {
@@ -72,19 +78,47 @@ contract SchoolFactory {
         return mySchools;
     }
 
-    function addLecturerToSchool() public {
+    function getMySchool(uint256 _schoolId) public view returns (School memory) {
+        // Use the school id to find the school
+        School memory mySchool;
+        bool found = false;
 
+        for (uint256 i = 0; i < schools.length; i++) {
+            if(schools[i].id == _schoolId) {
+                mySchool = schools[i];
+                found = true;
+                break;
+            }
+        }
+
+        // Check if my school exist
+        require(found, "School not found");
+        
+        // Ensure the caller is the owner of the school
+        require(msg.sender == mySchool.owner, "You are not the owner of this school");
+        return mySchool;
+    }
+
+    function addLecturerToSchool(
+        uint256 _schoolId,
+        string memory _name,
+        uint256 _age
+    ) public {
+        School storage school = schools[_schoolId];
+        require(msg.sender == school.owner, "Only school owner can lecturers");
+
+        school.lecturers.addLecturer(_name, _age);
     }
 
 
     function addCourseToSchoo(
-        uint256 _schoolIndex,
+        uint256 _schoolId,
         string memory _courseTitle,
         string memory _courseCode,
         uint256 _courseUnit,
         string memory _lecturerName
     ) public {
-        School storage school = schools[_schoolIndex];
+        School storage school = schools[_schoolId];
         require(msg.sender == school.owner, "Only owner can add courses");
 
         school.courses.createCourse(
