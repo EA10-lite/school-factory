@@ -22,7 +22,6 @@ contract SchoolFactory {
     School[] public schools;
     mapping(string => bool) private nameTaken;
     mapping(string => bool) private lecturerExist;
-    mapping(uint256 => School) private schoolId;
 
     function registerSchool(
         string memory _name,
@@ -52,7 +51,6 @@ contract SchoolFactory {
         );
 
         schools.push(newSchool);
-        schoolId[_schoolId] = newSchool;
     }
 
     function getMySchools() public view returns(School[] memory)  {
@@ -93,10 +91,24 @@ contract SchoolFactory {
 
         // Check if my school exist
         require(found, "School not found");
-        
+
         // Ensure the caller is the owner of the school
         require(msg.sender == mySchool.owner, "You are not the owner of this school");
         return mySchool;
+    }
+
+    function _getMySchool(uint256 _schoolId) internal view returns (School storage) {
+        for(uint256 i = 0; i < schools.length; i++) {
+            if(schools[i].id == _schoolId) {
+                require(
+                    schools[i].owner == msg.sender, 
+                    "You are not the owner of this school"
+                );
+                return schools[i];
+            }
+        }
+
+        revert("School not found");
     }
 
     function addLecturerToSchool(
@@ -104,10 +116,6 @@ contract SchoolFactory {
         string memory _name,
         uint256 _age
     ) public {
-        School storage school = schools[_schoolId];
-        require(msg.sender == school.owner, "Only school owner can lecturers");
-
-        school.lecturers.addLecturer(_name, _age);
     }
 
 

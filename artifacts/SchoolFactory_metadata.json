@@ -319,11 +319,11 @@
 			]
 		},
 		"SchoolFactory.sol": {
-			"keccak256": "0x0fe5ab8e1cc402cb72894b5eb76bf5bc5b809bf522e28c0f5e49ef5ecbd9571a",
+			"keccak256": "0x4fc65e0e37b17c9c1f86b0b49b686e339cca9d9dc8920621c4c5795a3ee06a17",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2b9581eb71820e77d7023ac2117536740c5c960627bbc77fb835f9611eb41f7b",
-				"dweb:/ipfs/Qme1twe4YYVdTWiPam68zqZZYcrsAThsbdWXeXDCckVJkj"
+				"bzz-raw://263054e937b969674cbcbdee70d24a64beead00ba8522ec6f23da813e5466738",
+				"dweb:/ipfs/QmT94e7KNJaCZAfBYWFCrNPXn6Xx8jzNwN5KWu1DHHCzny"
 			]
 		},
 		"StudentRecords.sol": {
