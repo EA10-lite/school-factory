@@ -12,6 +12,7 @@ contract Lecturers {
 
     function addLecturer(string memory _name, uint256 _age) public {
         require(bytes(_name).length > 0, "Name cannot be empty");
+        require(_age > 22, "Age must be greater than 22!");
         require(!lecturerExist[_name], "Lecturer already exist!");
         lecturerExist[_name] = true;
         lecturers.push(Lecturer(_name, _age));

@@ -24,7 +24,8 @@ contract Courses {
         uint256 _unit,
         string memory _lecturer
     ) public  {
-        require(bytes(_title).length > 0, "Name cannot be empty");
+        require(bytes(_title).length > 0, "Course title cannot be empty!");
+        require(_unit > 0, "Course unit must be greater than 0!");
         require(!courseExist[_title], "Course already added!");
         courseExist[_title] = true;
         // courses can't be created without lecturer

@@ -21,7 +21,6 @@ contract SchoolFactory {
 
     School[] public schools;
     mapping(string => bool) private nameTaken;
-    mapping(string => bool) private lecturerExist;
 
     function registerSchool(
         string memory _name,
@@ -153,11 +152,5 @@ contract SchoolFactory {
             _courseUnit,
             _lecturerName
         );
-    }
-
-
-    function getSchoolCourses(uint256 _schoolId) public view returns (Courses.Course[] memory) {
-        School storage mySchool = _getMySchool(_schoolId);
-        return mySchool.courses.getCourses();
     }
 }
