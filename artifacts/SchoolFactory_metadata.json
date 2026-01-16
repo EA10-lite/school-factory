@@ -190,6 +190,47 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_schoolId",
+						"type": "uint256"
+					}
+				],
+				"name": "getSchoolCourses",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "unit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "code",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lecturer",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Courses.Course[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -211,6 +252,39 @@
 					}
 				],
 				"name": "registerSchool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_schoolId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "gender",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "department",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					}
+				],
+				"name": "registerStudent",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -303,11 +377,11 @@
 	},
 	"sources": {
 		"Courses.sol": {
-			"keccak256": "0x06a1c055f3f93e3ac7214cdd01e5f6d320418b4a90e697951188573b9ba63e17",
+			"keccak256": "0xfd26d831fcd059e74cf3763792ea348d942838b6b8373a690783e34da5698616",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2e0a1123523c714a7dff17f7500d263d054a7fd0aee480fed50136222cd769ae",
-				"dweb:/ipfs/QmepadhwsrZ3GZjPQV3n6ZjH5H8NyPwQv7V4KZM63s9Tn9"
+				"bzz-raw://5ae3e8bed554c2769e324b8a80a4417409f8348feaf64c9aa37d7065a4dff7d2",
+				"dweb:/ipfs/QmdmWVPmmMXSoGDny6z7ZqQArqHB5WnqfAN1dzGfQeDeMJ"
 			]
 		},
 		"Lecturers.sol": {
@@ -319,11 +393,11 @@
 			]
 		},
 		"SchoolFactory.sol": {
-			"keccak256": "0x4fc65e0e37b17c9c1f86b0b49b686e339cca9d9dc8920621c4c5795a3ee06a17",
+			"keccak256": "0xd4ac5483c9fb5d66cd712ccefa08a2ac51ae3c6c34a2ffe92fcf3db8bbcb336c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://263054e937b969674cbcbdee70d24a64beead00ba8522ec6f23da813e5466738",
-				"dweb:/ipfs/QmT94e7KNJaCZAfBYWFCrNPXn6Xx8jzNwN5KWu1DHHCzny"
+				"bzz-raw://e34bfad1da12262db8c1aab31ad32d62b43c0d7978ff1fa1b1235c83c28ad106",
+				"dweb:/ipfs/QmNxU5sYKtTT5E6vgcLjRjXBaYP6c3dhJBX7BbaU99ZBLL"
 			]
 		},
 		"StudentRecords.sol": {

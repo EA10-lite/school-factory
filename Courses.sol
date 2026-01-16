@@ -34,4 +34,9 @@ contract Courses {
         courses.push(newCourse);
         codeToCourse[_code] = newCourse;
     }
+    
+
+    function getCourses() public view returns (Course[] memory) {
+        return courses;
+    }
 }

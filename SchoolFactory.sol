@@ -111,11 +111,29 @@ contract SchoolFactory {
         revert("School not found");
     }
 
+    function registerStudent(
+        uint256 _schoolId,
+        string memory name,
+        string memory gender,
+        string memory department,
+        uint256 age
+    ) public {
+        School storage mySchool = _getMySchool(_schoolId);
+        mySchool.students.registerStudent(
+            name,
+            age,
+            gender,
+            department
+        );
+    }
+
     function addLecturerToSchool(
         uint256 _schoolId,
         string memory _name,
         uint256 _age
     ) public {
+        School storage mySchool = _getMySchool(_schoolId);
+        mySchool.lecturers.addLecturer(_name, _age);
     }
 
 
@@ -126,7 +144,7 @@ contract SchoolFactory {
         uint256 _courseUnit,
         string memory _lecturerName
     ) public {
-        School storage school = schools[_schoolId];
+        School storage school = _getMySchool(_schoolId);
         require(msg.sender == school.owner, "Only owner can add courses");
 
         school.courses.createCourse(
@@ -135,5 +153,11 @@ contract SchoolFactory {
             _courseUnit,
             _lecturerName
         );
+    }
+
+
+    function getSchoolCourses(uint256 _schoolId) public view returns (Courses.Course[] memory) {
+        School storage mySchool = _getMySchool(_schoolId);
+        return mySchool.courses.getCourses();
     }
 }

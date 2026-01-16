@@ -100,6 +100,41 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCourses",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "unit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "code",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lecturer",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Courses.Course[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -130,11 +165,19 @@
 	},
 	"sources": {
 		"Courses.sol": {
-			"keccak256": "0x5432118d0dd5f00bd64b5ec655890f9331b515976666bcdcfa86e7b90c5ea21e",
+			"keccak256": "0xfd26d831fcd059e74cf3763792ea348d942838b6b8373a690783e34da5698616",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0d3c1e3256ed3d962361d35d6c6dd137063f39b083755306d25b1e4d4699057d",
-				"dweb:/ipfs/QmPhDNt6SPdfXixpFTPPkF1RDzK9oyYmJACkZfHMVHFzKF"
+				"bzz-raw://5ae3e8bed554c2769e324b8a80a4417409f8348feaf64c9aa37d7065a4dff7d2",
+				"dweb:/ipfs/QmdmWVPmmMXSoGDny6z7ZqQArqHB5WnqfAN1dzGfQeDeMJ"
+			]
+		},
+		"Lecturers.sol": {
+			"keccak256": "0x851ddb58ce99da9558a1f759b94ebcbbb3e32fd153aba095f00c7b4d14fff115",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://add64f6b89ec7e0c86096d2acc6a963522f6584c54b696e7698a41c04cd99640",
+				"dweb:/ipfs/QmaA5bWYxBBy8RgumrJbg66Xe52VRxfmxoN3J7zVGbFtoZ"
 			]
 		}
 	},
